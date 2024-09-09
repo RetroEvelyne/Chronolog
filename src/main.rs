@@ -5,6 +5,7 @@
 mod repo;
 mod newlog;
 mod readlog;
+mod editlog;
 
 use clap::{command, Command, ArgMatches};
 
@@ -18,6 +19,7 @@ fn main() {
 
     let command_result = command!()
         .arg_required_else_help(true)
+        .version("0.1.0")
         .subcommand(
             Command::new("new")
             .about("Log a new entry")
